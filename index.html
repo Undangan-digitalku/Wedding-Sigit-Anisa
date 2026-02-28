@@ -236,7 +236,7 @@
 
     <p class="text-gray-400 text-sm mb-8">
       Kepada Yth.<br />
-      <span class="text-gold font-semibold">Bapak/Ibu/Saudara/i</span>
+      <span class="text-gold font-semibold" id="nama-tamu">Bapak/Ibu/Saudara/i</span>
     </p>
 
     <button id="open-invitation-btn"
@@ -660,6 +660,20 @@
 <!-- =============================================== -->
 
 <script>
+// ===============================
+// OPSI B — Nama tamu dari WhatsApp (tanpa parameter)
+// ===============================
+
+// Ambil nama dari teks WA (pakai placeholder otomatis)
+(function () {
+  const url = new URL(window.location.href);
+  const nameFromWA = url.hash.replace("#to=", "");
+
+  if (nameFromWA) {
+    document.getElementById("nama-tamu").innerText = nameFromWA;
+  }
+})();
+
 /* ==========================================================
    === BAGIAN JAVASCRIPT — REPAIR VERSION ===
    ========================================================== */
